@@ -1,0 +1,14 @@
+uuid: 2c63575a-3ffa-47eb-afb3-e55f188b2163
+name: 'Open Street Map'
+mail: osm@bitwise.com.co
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
