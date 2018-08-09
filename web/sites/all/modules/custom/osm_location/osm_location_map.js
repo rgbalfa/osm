@@ -1,5 +1,5 @@
-function osm_location_map_init() {
-  var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+function osm_location_map_init(locations, boundries) {
+  var mymap = L.map('mapid').setView(boundries, 13);
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -9,8 +9,10 @@ function osm_location_map_init() {
     id: 'mapbox.streets'
   }).addTo(mymap);
 
-  L.marker([51.5, -0.09]).addTo(mymap)
-    .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+  for (var i = 0; i < locations.length; i++) {
+    L.marker([locations[i].lat, locations[i].long]).addTo(mymap)
+      .bindPopup("<b>" + locations[i].title + "</b><br />" + [locations[i].lat + ", " + locations[i].long] + ".").openPopup();
+  }
 
   var popup = L.popup();
 
