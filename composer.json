@@ -28,6 +28,7 @@
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
+        "overtrue/phplint": "^1.1",
         "webflo/drupal-core-require-dev": "~8.5.3"
     },
     "conflict": {
