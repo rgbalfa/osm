@@ -12,4 +12,5 @@ leaflet_custom:
     osm_location_map.js: {}
   dependencies:
     - core/jquery
+    - core/drupal
     - core/drupalSettings
