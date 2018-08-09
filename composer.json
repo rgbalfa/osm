@@ -46,6 +46,11 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
+        "test": [
+            "./vendor/bin/phpunit || true",
+            "./vendor/bin/phplint --configuration=.phplint.yml --no-cache ./web/sites/all/modules/custom",
+            "./vendor/bin/phpcs --standard=./vendor/drupal/coder/coder_sniffer/Drupal ./web/sites/all/modules/custom --extensions=php,inc,module,install"
+        ],
         "pre-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
