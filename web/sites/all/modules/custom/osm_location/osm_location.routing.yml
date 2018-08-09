@@ -1,0 +1,7 @@
+osm_location.get:
+  path: '/map/osm'
+  defaults:
+    _controller: '\Drupal\osm_location\Controller\OSMLocationMap::content'
+    _title: 'OSM'
+  requirements:
+    _permission: 'access content'

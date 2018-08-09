@@ -1,0 +1,16 @@
+leaflet:
+  version: 1.0
+  css:
+    layout:
+      openstreetmap-library/leaflet.css: {}
+  js:
+    openstreetmap-library/leaflet.js: {}
+leaflet_custom:
+  version: 1.0
+  js:
+    osm_location.js: {}
+    osm_location_map.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
