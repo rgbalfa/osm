@@ -12,11 +12,18 @@ class OSMLocationMap extends ControllerBase {
   /**
    * Returns array.
    */
-  private function calcBoundries() {
+  private function calcMapCenter() {
     // todo: calc boundries
-    return [40.730610, -73.935242]
+    return [40.730610, -73.935242];
   }
 
+  /**
+   * Returns array.
+   */
+  private function calcMapZoom() {
+    // todo: calc boundries
+    return 12;
+  }
 
   /**
    * Returns a render-able array for the map page.
@@ -35,7 +42,8 @@ class OSMLocationMap extends ControllerBase {
       $locations[] = $location;
     }
 
-    $boundries = $this->calcBoundries($locations);
+    $center = $this->calcMapCenter($locations);
+    $zoom = $this->calcMapZoom($locations);
 
     $build = [
       'map' => [
@@ -53,7 +61,8 @@ class OSMLocationMap extends ControllerBase {
         'drupalSettings' => [
            'osm_location' => [
              'locations' => $locations,
-             'boundries' => $boundries,
+             'center' => $center,
+             'zoom' => $zoom,
            ]
         ]
       ],
