@@ -1,0 +1,5 @@
+osm_location.get:
+  defaults: { _controller: '\Drupal\osm_location\Controller\OSMLocationMap::get' }
+    methods:  [GET]
+    requirements:
+      _access: 'TRUE'
