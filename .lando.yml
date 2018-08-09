@@ -1,4 +1,9 @@
-name: openstreetmap
+iname: openstreetmap
 recipe: drupal8
 config:
   webroot: web
+services:
+  appserver:
+    # Add a Build Step to your App.
+    run:
+      - "cd $LANDO_MOUNT && composer install"
