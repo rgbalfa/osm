@@ -1,0 +1,9 @@
+path: ./web/sites/all
+extensions:
+  - php
+  - module
+  - inc
+  - install
+exclude:
+  - modules/contrib
+  - libraries
