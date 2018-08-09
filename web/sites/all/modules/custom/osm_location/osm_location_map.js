@@ -1,5 +1,9 @@
-function osm_location_map_init(locations, center, zoom) {
-  var mymap = L.map('mapid').setView(center, zoom);
+function osm_location_map_init(locations) {
+  var coordinates = [];
+  for (var i = 0; i < locations.length; i++) {
+    coordinates[i] = [locations[i].lat, locations[i].long];
+  }
+  var mymap = L.map('mapid').fitBounds(coordinates);
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -14,13 +18,9 @@ function osm_location_map_init(locations, center, zoom) {
       .bindPopup("<b>" + locations[i].title + "</b><br />" + [locations[i].lat + ", " + locations[i].long] + ".").openPopup();
   }
 
-  var popup = L.popup();
-
+  // Debug utility for testing.
   function onMapClick(e) {
-    popup
-      .setLatLng(e.latlng)
-      .setContent("You clicked the map at " + e.latlng.toString())
-      .openOn(mymap);
+    console.log("clicked at " + e.latlng.toString());
   }
 
   mymap.on('click', onMapClick);
