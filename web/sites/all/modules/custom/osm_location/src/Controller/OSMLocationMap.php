@@ -48,7 +48,7 @@ class OSMLocationMap extends ControllerBase {
     $build = [
       'map' => [
         '#type' => 'markup',
-        '#markup' => 'map:<div id=mapid></div>',
+        '#markup' => 'map:<div id=mapid-wrapper><div id=mapid></div></div>',
         '#allowed_tags' => ['div'],
       ],
       '#attached' => [
