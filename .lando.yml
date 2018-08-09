@@ -1,4 +1,4 @@
-iname: openstreetmap
+name: openstreetmap
 recipe: drupal8
 config:
   webroot: web
