@@ -34,9 +34,6 @@ class OSMLocationMap extends ControllerBase {
       ],
       '#attached' => [
         'library' => [
-           'core/jquery',
-           'core/drupalSettings',
-           'osm_location/leaflet',
            'osm_location/leaflet_custom',
         ],
         'drupalSettings' => [
