@@ -14,7 +14,7 @@ class OSMLocationMap extends ControllerBase {
    * Returns a render-able array for the map page.
    */
   public function content() {
-    $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+    $nodes = $this->entityTypeManager()->getStorage('node')->loadByProperties([
       'type' => 'location'
     ]);
     $locations = [];
