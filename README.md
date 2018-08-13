@@ -1,3 +1,27 @@
+# OSM Map Location Exercise
+
+## Installation
+
+- Install Lando: [Official Guide](https://docs.devwithlando.io/installation/installing.html).
+- Run ```composer install```
+- Run ```lando start ```
+- Run ```lando db-import openstreetmap-2.sql```
+- Visit the page ```http://openstreetmap.lndo.site/map/osm```
+- Relevant documentation is availabe at [Lando Drupal 8 Docs](https://docs.devwithlando.io/tutorials/drupal8.html).
+
+## Requirements
+
+The goal of this exercise is to display a map at a custom path on a Drupal 8 site.  Please do not spend more than a couple hours on this exercise.
+
+In a Docker container:
+1. Create a Drupal 8 site
+  * Create a content type that accepts a title, description, and latitude / longitude points
+  * Display a map using OpenStreetMap at the path /map/osm
+  * On the map, display a marker for each content item entered that has both a latitude and longitude
+  * Create a README explaining how to set up the project
+
+# Composer template README.md
+
 # Composer template for Drupal projects
 
 [![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
