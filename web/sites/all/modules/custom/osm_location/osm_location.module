@@ -1,0 +1,25 @@
+<?php
+
+use \Drupal\Core\Cache\Cache;
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for node entities.
+ *
+ * Invalidates the cache tag 'osm_location_map'
+ */
+function osm_location_node_update(Drupal\node\NodeInterface $node) {
+  if ($node->bundle() === 'location') {
+    Cache::invalidateTags(['osm_location_map']);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for node entities.
+ *
+ * Invalidates the cache tag 'osm_location_map'
+ */
+function osm_location_node_insert(Drupal\node\NodeInterface $node) {
+  if ($node->bundle() === 'location') {
+    Cache::invalidateTags(['osm_location_map']);
+  }
+}
