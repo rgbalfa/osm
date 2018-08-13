@@ -3,6 +3,7 @@
 namespace Drupal\osm_location\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Cache\Cache;
 
 /**
  * A controller.
@@ -41,6 +42,11 @@ class OSMLocationMap extends ControllerBase {
              'locations' => $locations,
            ]
         ]
+      ],
+      '#cache' => [
+        'contexts' => ['url.query_args:debug'], // setting this cache contexts as debug aid.
+        'tags' => ['osm_location_map'],
+        'max-age' => Cache::PERMANENT,
       ],
     ];
     return $build;
