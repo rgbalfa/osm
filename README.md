@@ -9,6 +9,11 @@
 - Visit the page ```http://openstreetmap.lndo.site/map/osm```
 - Relevant documentation is availabe at [Lando Drupal 8 Docs](https://docs.devwithlando.io/tutorials/drupal8.html).
 
+## Custom Code
+
+All the custom code is in the ```OSM Location``` Module at:
+```web/sites/all/modules/custom/osm_location```
+
 ## Requirements
 
 The goal of this exercise is to display a map at a custom path on a Drupal 8 site.  Please do not spend more than a couple hours on this exercise.
